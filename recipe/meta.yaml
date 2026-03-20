@@ -13,7 +13,7 @@ source:
   sha256: b333feceb79ea190d5205735f664506b74a94241da096a7996ca5cf8ea88c280
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
@@ -23,20 +23,18 @@ requirements:
     - python {{ python_min }}
     - flit-core >=3.4,<4
   run:
-    - astropy-base <7,>=6.0
+    - astropy-base >=6.1
     - astroquery >=0.3.9
+    - czml3
     - jplephem
     - matplotlib-base !=3.0.1,>=2.0
-    - numba >=0.53.0
-    - numpy >=2.0
+    - numba >=0.61.0
+    - numpy >=2.0.2
     - pandas
     - plotly <6,>=4.0
     - pyerfa
     - python >={{ python_min }},<{{ python_max }}
     - scipy >=1.4.0
-    - cached-property
-    - pyerfa
-    - czml3
 
 test:
   imports:
